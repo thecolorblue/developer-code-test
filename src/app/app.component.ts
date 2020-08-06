@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
 
     this.$artwork.subscribe(artwork => {
       console.log(artwork);
-    })
+    });
   }
 
   openDialog(artwork: Artwork) {

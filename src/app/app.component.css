@@ -1,0 +1,55 @@
+.small {
+  font-size: 10px;
+  color: #d0d0d0;
+}
+
+.art-list-card {
+  height: calc(33vh - 49px);
+  border-radius: 0;
+  width: 100%;
+}
+
+.art-list-card-header {
+  position: absolute;
+  background: grey;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  padding-top: 1em;
+}
+
+.dialog-mat-card-image {
+  max-height: calc(100vh - 274px);
+  max-width: calc(100% + 32px);
+  width: auto;
+  margin-top: auto !important;
+}
+
+.dialog-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-card-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(33vh - 94px);
+  margin-top: 61px;
+}
+
+.dialog-pull-right {
+  position: absolute;
+  right: 27px;
+  text-align: right;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dialog-card.mat-card {
+  box-shadow: none;
+}

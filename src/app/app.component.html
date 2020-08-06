@@ -1,0 +1,46 @@
+<mat-toolbar>
+  <span>CMA Catalog</span>
+</mat-toolbar>
+
+<mat-grid-list cols="3">
+  <mat-grid-tile *ngFor="let artwork of $artwork | async">
+    <mat-card (click)="openDialog(artwork)" class="art-list-card">
+      <mat-card-header class="art-list-card-header">
+        <mat-card-title>{{artwork.title}}</mat-card-title>
+        <mat-card-subtitle>{{artwork.creator_name}} <small *ngIf="artwork.creator_lifetime">({{artwork.creator_lifetime}})</small></mat-card-subtitle>
+      </mat-card-header>
+      <div class="grid-card-image-container">
+        <img mat-card-image [src]="'/assets/images/' + artwork.accession_number + '_reduced.jpg'"/>
+      </div>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template let-data #artworkDialog>
+  <mat-card class="dialog-card">
+    <mat-card-header>
+      <mat-card-title>{{data.artwork.title}}</mat-card-title>
+      <mat-card-subtitle>{{data.artwork.creator_name}} <small *ngIf="data.artwork.creator_lifetime">({{data.artwork.creator_lifetime}})</small></mat-card-subtitle>
+      <div class="dialog-pull-right">
+        <mat-card-subtitle>{{data.artwork.creator_region}}</mat-card-subtitle>
+        <mat-card-subtitle>{{data.artwork.department_name}}</mat-card-subtitle>  
+      </div>
+    </mat-card-header>
+    <div class="dialog-image-container">
+      <img mat-card-image [src]="'/assets/images/' + data.artwork.accession_number + '_reduced.jpg'"
+      class="dialog-mat-card-image"/>
+    </div>
+    <mat-card-content>
+      <h2>{{data.artwork.title}} <small>({{data.artwork.created}})</small></h2>
+      <p class="small" *ngIf="data.artwork.creator_role">{{data.artwork.creator_role}}:</p>
+      <p>{{data.artwork.creator_full}}</p>
+      <p>{{data.artwork.description}}</p>
+      <p class="small">{{data.artwork.attribution}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button (click)="next(data.artwork, 'artist')">next by artist</button>
+      <button mat-stroked-button (click)="next(data.artwork, 'department')">next by department</button>
+      <button mat-stroked-button (click)="next(data.artwork)">next</button>
+    </mat-card-actions>
+  </mat-card>
+</ng-template>

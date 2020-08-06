@@ -10,7 +10,7 @@
         <mat-card-subtitle>{{artwork.creator_name}} <small *ngIf="artwork.creator_lifetime">({{artwork.creator_lifetime}})</small></mat-card-subtitle>
       </mat-card-header>
       <div class="grid-card-image-container">
-        <img mat-card-image [src]="'/assets/images/' + artwork.accession_number + '_reduced.jpg'"/>
+        <img mat-card-image [src]="'./assets/images/' + artwork.accession_number + '_reduced.jpg'"/>
       </div>
     </mat-card>
   </mat-grid-tile>
@@ -27,7 +27,7 @@
       </div>
     </mat-card-header>
     <div class="dialog-image-container">
-      <img mat-card-image [src]="'/assets/images/' + data.artwork.accession_number + '_reduced.jpg'"
+      <img mat-card-image [src]="'./assets/images/' + data.artwork.accession_number + '_reduced.jpg'"
       class="dialog-mat-card-image"/>
     </div>
     <mat-card-content>

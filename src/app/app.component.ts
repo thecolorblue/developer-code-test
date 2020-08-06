@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-    this.$artwork = this.http.get<Artwork[]>('/assets/artwork.json')
+    this.$artwork = this.http.get<Artwork[]>('./assets/artwork.json')
       .pipe(map(artwork => {
         // remove duplicates by 'accession_number'
         const unique = [];

@@ -10,7 +10,7 @@ Folders:
 
 ### Running Locally
 
-The `/dist` folder is a compiled version of the app with everything it needs. You can use your favorite static server. Try `python -m SimpleHTTPServer 8000` in the `dist/code-test` folder.
+The `/dist` folder is a compiled version of the app with everything it needs. You can use your favorite static server. Try `python -m SimpleHTTPServer 8000` in the root folder of the project and go to `localhost:8000/dist/code-test` in your browser.
 
 #### For development
 
